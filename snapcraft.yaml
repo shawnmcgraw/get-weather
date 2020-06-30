@@ -1,6 +1,6 @@
 name: get-weather
 version: '0.1'
-summary: Get-Weather
+summary: Get-Weather cli app
 description: |
   Get current weather for a zip code on the command line.
 confinement: devmode

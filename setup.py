@@ -7,10 +7,6 @@ setup(
     install_requires=[
         'requests'
     ],
-    # entry_points='''
-    #     [console_scripts]
-    #     get-weather=cliw:get_weather
-    # ''',
     entry_points={
         'console_scripts': [
             'get-weather=cliw:get_weather',
