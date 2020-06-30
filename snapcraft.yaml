@@ -16,3 +16,5 @@ parts:
 apps:
   get-weather:
     command: get-weather
+    plugs:
+      - network

@@ -1,15 +1,29 @@
 # Get-Weather
-A simple cli app written in python to display weather info from the command line.
-It pulls weather info from the [Open Weather Map api](https://openweathermap.org/current).
+A simple cli application written in python to display weather info on the command line.
 
 Usage: `get-wether [zipcode]`
 
-To use this script you'll need an [openweathermap.org](https://openweathermap.org/api) api key. It's free. 
-Once you have your key, create a file named 'env.py' `touch env.py`. In it add a variable called `api_key`.
+Requirements to build: snapd, git, Python 3, and an API key from [openweathermap.org](https://openweathermap.org/api).
+
+Once you have your API key, create a file named 'env.py' `touch env.py`. In it add a variable called `api_key`.
 ```python
 api_key='hereYouPlaceYourAPIKey'
 ```
+Or:
+```bash
+touch env.py && echo "api_key = 'yourApiKeyHere'" > env.py
+```
 The script imports the `api_key` variable and uses it in all API requests.
 
-To build the snap, simply run `snapcraft` from the directory containing the project. 
-See the [Snpacraft documentation for Python apps](https://snapcraft.io/docs/python-apps).
+Using Snap, install snapcraft and multipass: 
+```bash
+sudo snap install snapcraft && sudo snap install multipass
+```
+To build the snap, simply run `snapcraft` from the project directory. Note: The build process may take a few minutes
+to complete.
+
+To install the created snap:
+```bash
+sudo snap install *.snap --devmode
+```
+For more info on Snaps, see the [Snpacraft documentation for Python apps](https://snapcraft.io/docs/python-apps).
