@@ -1,20 +1,20 @@
-name: get-weather
+name: get-weather   # The name of the package
 version: '0.1'
-summary: Get-Weather cli app
-description: |
+summary: Get-Weather cli app  # Short one line summary
+description: |  # A more detailed description of the app and it's functionality
   Get current weather for a zip code on the command line.
-confinement: devmode
-base: core18
-grade: devel
+confinement: devmode  # 'strict', 'classic' or 'devmode'. I've only tested devmode so far.
+base: core18  # Snap core. 'core18' is equivalent to Ubuntu 18.04. Options: 'core', 'core18', 'core20'
+grade: devel  # 'devel' or 'stable' based on weather it's ready for release
 
-parts:
-  get-weather:
-    plugin: python
+parts:  # Where the app, files and dependencies are defined.
+  get-weather:  # Pulled from setup.py
+    plugin: python  # Defines the runtime plugin
     python-version: python3
-    source: .
+    source: .   # Files are in the current directory. This can be almost anything. A .deb, a remote source, etc.
 
-apps:
-  get-weather:
-    command: get-weather
+apps:   # Exposes the executable to the host system.
+  get-weather:  # Same name as the 'part' defined above.
+    command: get-weather  # The command.
     plugs:
-      - network
+      - network   # Allows the snap in interface with the network. Not needed in devmode but might be in strict.

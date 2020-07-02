@@ -1,5 +1,5 @@
 # Get-Weather
-A simple cli application written in python to display weather info on the command line.
+A simple cli application, written in python, to display weather info on the command line.
 
 Usage: `get-wether [zipcode]`
 
